@@ -2677,7 +2677,13 @@ void _glfwIconifyWindowWayland(_GLFWwindow* window)
 void _glfwDragWindowWayland(_GLFWwindow* window)
 {
     if (window->wl.xdg.toplevel && _glfw.wl.seat && _glfw.wl.serial)
+    {
         xdg_toplevel_move(window->wl.xdg.toplevel, _glfw.wl.seat, _glfw.wl.serial);
+        // The Wayland compositor consumes the pointer button-release event during
+        // xdg_toplevel_move, so GLFW never receives it.  Fire a synthetic release
+        // here so that the button state and all callbacks stay consistent.
+        _glfwInputMouseClick(window, GLFW_MOUSE_BUTTON_LEFT, GLFW_RELEASE, _glfw.wl.xkb.modifiers);
+    }
 }
 
 void _glfwRestoreWindowWayland(_GLFWwindow* window)
