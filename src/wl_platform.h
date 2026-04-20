@@ -406,6 +406,11 @@ typedef struct _GLFWwindowWayland
 
     double                      cursorPosX, cursorPosY;
 
+    // Virtual position store: Wayland has no global coordinate system, so
+    // glfwSetWindowPos/glfwGetWindowPos use this field to keep a consistent
+    // position in ImGui's global coordinate space.
+    int                         virtualPosX, virtualPosY;
+
     char*                       appId;
 
     // We need to track the monitors the window spans on to calculate the

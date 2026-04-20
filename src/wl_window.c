@@ -2520,19 +2520,17 @@ void _glfwSetWindowIconWayland(_GLFWwindow* window,
 
 void _glfwGetWindowPosWayland(_GLFWwindow* window, int* xpos, int* ypos)
 {
-    // A Wayland client is not aware of its position, so just warn and leave it
-    // as (0, 0)
-
-    _glfwInputError(GLFW_FEATURE_UNAVAILABLE,
-                    "Wayland: The platform does not provide the window position");
+    if (xpos) *xpos = window->wl.virtualPosX;
+    if (ypos) *ypos = window->wl.virtualPosY;
 }
 
 void _glfwSetWindowPosWayland(_GLFWwindow* window, int xpos, int ypos)
 {
-    // A Wayland client can not set its position, so just warn
-
-    _glfwInputError(GLFW_FEATURE_UNAVAILABLE,
-                    "Wayland: The platform does not support setting the window position");
+    // The compositor controls the actual on-screen position; store the
+    // requested value so that glfwGetWindowPos / ImGui coordinate math stays
+    // self-consistent.
+    window->wl.virtualPosX = xpos;
+    window->wl.virtualPosY = ypos;
 }
 
 void _glfwGetWindowSizeWayland(_GLFWwindow* window, int* width, int* height)
