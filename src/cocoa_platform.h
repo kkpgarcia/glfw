@@ -228,6 +228,7 @@ void _glfwGetFramebufferSizeCocoa(_GLFWwindow* window, int* width, int* height);
 void _glfwGetWindowFrameSizeCocoa(_GLFWwindow* window, int* left, int* top, int* right, int* bottom);
 void _glfwGetWindowContentScaleCocoa(_GLFWwindow* window, float* xscale, float* yscale);
 void _glfwIconifyWindowCocoa(_GLFWwindow* window);
+void _glfwDragWindowCocoa(_GLFWwindow* window);
 void _glfwRestoreWindowCocoa(_GLFWwindow* window);
 void _glfwMaximizeWindowCocoa(_GLFWwindow* window);
 void _glfwShowWindowCocoa(_GLFWwindow* window);

@@ -3823,6 +3823,18 @@ GLFWAPI void glfwSetWindowOpacity(GLFWwindow* window, float opacity);
  *  @ingroup window
  */
 GLFWAPI void glfwIconifyWindow(GLFWwindow* window);
+/*! @brief Begins an interactive move of the specified window.
+ *
+ *  On Wayland this calls xdg_toplevel_move so the compositor handles
+ *  the drag.  On all other platforms this is a no-op.
+ *
+ *  Must be called while a mouse button is held.
+ *
+ *  @param[in] window  The window to start moving.
+ *  @ingroup window
+ */
+GLFWAPI void glfwDragWindow(GLFWwindow* window);
+
 
 /*! @brief Restores the specified window.
  *

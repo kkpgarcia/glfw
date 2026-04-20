@@ -2674,6 +2674,12 @@ void _glfwIconifyWindowWayland(_GLFWwindow* window)
         xdg_toplevel_set_minimized(window->wl.xdg.toplevel);
 }
 
+void _glfwDragWindowWayland(_GLFWwindow* window)
+{
+    if (window->wl.xdg.toplevel && _glfw.wl.seat && _glfw.wl.serial)
+        xdg_toplevel_move(window->wl.xdg.toplevel, _glfw.wl.seat, _glfw.wl.serial);
+}
+
 void _glfwRestoreWindowWayland(_GLFWwindow* window)
 {
     if (window->monitor)

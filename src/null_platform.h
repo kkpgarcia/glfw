@@ -234,6 +234,7 @@ void _glfwGetFramebufferSizeNull(_GLFWwindow* window, int* width, int* height);
 void _glfwGetWindowFrameSizeNull(_GLFWwindow* window, int* left, int* top, int* right, int* bottom);
 void _glfwGetWindowContentScaleNull(_GLFWwindow* window, float* xscale, float* yscale);
 void _glfwIconifyWindowNull(_GLFWwindow* window);
+void _glfwDragWindowNull(_GLFWwindow* window);
 void _glfwRestoreWindowNull(_GLFWwindow* window);
 void _glfwMaximizeWindowNull(_GLFWwindow* window);
 GLFWbool _glfwWindowMaximizedNull(_GLFWwindow* window);

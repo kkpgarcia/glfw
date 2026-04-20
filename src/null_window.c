@@ -345,6 +345,10 @@ void _glfwIconifyWindowNull(_GLFWwindow* window)
     }
 }
 
+void _glfwDragWindowNull(_GLFWwindow* window)
+{
+}
+
 void _glfwRestoreWindowNull(_GLFWwindow* window)
 {
     if (window->null.iconified)

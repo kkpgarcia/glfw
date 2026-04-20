@@ -619,6 +619,7 @@ GLFWbool _glfwConnectWin32(int platformID, _GLFWplatform* platform)
         .getWindowFrameSize = _glfwGetWindowFrameSizeWin32,
         .getWindowContentScale = _glfwGetWindowContentScaleWin32,
         .iconifyWindow = _glfwIconifyWindowWin32,
+        .dragWindow = _glfwDragWindowWin32,
         .restoreWindow = _glfwRestoreWindowWin32,
         .maximizeWindow = _glfwMaximizeWindowWin32,
         .showWindow = _glfwShowWindowWin32,

@@ -1189,6 +1189,11 @@ void _glfwIconifyWindowCocoa(_GLFWwindow* window)
     } // autoreleasepool
 }
 
+void _glfwDragWindowCocoa(_GLFWwindow* window)
+{
+    /* macOS: window drag not implemented */
+}
+
 void _glfwRestoreWindowCocoa(_GLFWwindow* window)
 {
     @autoreleasepool {

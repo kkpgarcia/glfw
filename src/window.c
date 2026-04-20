@@ -804,6 +804,15 @@ GLFWAPI void glfwIconifyWindow(GLFWwindow* handle)
     _glfw.platform.iconifyWindow(window);
 }
 
+GLFWAPI void glfwDragWindow(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*) handle;
+    assert(window != NULL);
+
+    _GLFW_REQUIRE_INIT();
+    _glfw.platform.dragWindow(window);
+}
+
 GLFWAPI void glfwRestoreWindow(GLFWwindow* handle)
 {
     _GLFW_REQUIRE_INIT();

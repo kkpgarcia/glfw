@@ -729,6 +729,7 @@ struct _GLFWplatform
     void (*getWindowFrameSize)(_GLFWwindow*,int*,int*,int*,int*);
     void (*getWindowContentScale)(_GLFWwindow*,float*,float*);
     void (*iconifyWindow)(_GLFWwindow*);
+    void (*dragWindow)(_GLFWwindow*);
     void (*restoreWindow)(_GLFWwindow*);
     void (*maximizeWindow)(_GLFWwindow*);
     void (*showWindow)(_GLFWwindow*);

@@ -1218,6 +1218,7 @@ GLFWbool _glfwConnectX11(int platformID, _GLFWplatform* platform)
         .getWindowFrameSize = _glfwGetWindowFrameSizeX11,
         .getWindowContentScale = _glfwGetWindowContentScaleX11,
         .iconifyWindow = _glfwIconifyWindowX11,
+        .dragWindow = _glfwDragWindowX11,
         .restoreWindow = _glfwRestoreWindowX11,
         .maximizeWindow = _glfwMaximizeWindowX11,
         .showWindow = _glfwShowWindowX11,

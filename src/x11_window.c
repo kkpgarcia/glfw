@@ -2334,6 +2334,11 @@ void _glfwIconifyWindowX11(_GLFWwindow* window)
     XFlush(_glfw.x11.display);
 }
 
+void _glfwDragWindowX11(_GLFWwindow* window)
+{
+    /* X11: use glfwSetWindowPos for manual dragging */
+}
+
 void _glfwRestoreWindowX11(_GLFWwindow* window)
 {
     if (window->x11.overrideRedirect)

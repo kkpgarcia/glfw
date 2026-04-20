@@ -1777,6 +1777,12 @@ void _glfwIconifyWindowWin32(_GLFWwindow* window)
     ShowWindow(window->win32.handle, SW_MINIMIZE);
 }
 
+void _glfwDragWindowWin32(_GLFWwindow* window)
+{
+    ReleaseCapture();
+    SendMessageW(window->win32.handle, WM_SYSCOMMAND, SC_MOVE | HTCAPTION, 0);
+}
+
 void _glfwRestoreWindowWin32(_GLFWwindow* window)
 {
     ShowWindow(window->win32.handle, SW_RESTORE);

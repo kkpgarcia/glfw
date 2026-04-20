@@ -667,6 +667,7 @@ void _glfwGetFramebufferSizeWayland(_GLFWwindow* window, int* width, int* height
 void _glfwGetWindowFrameSizeWayland(_GLFWwindow* window, int* left, int* top, int* right, int* bottom);
 void _glfwGetWindowContentScaleWayland(_GLFWwindow* window, float* xscale, float* yscale);
 void _glfwIconifyWindowWayland(_GLFWwindow* window);
+void _glfwDragWindowWayland(_GLFWwindow* window);
 void _glfwRestoreWindowWayland(_GLFWwindow* window);
 void _glfwMaximizeWindowWayland(_GLFWwindow* window);
 void _glfwShowWindowWayland(_GLFWwindow* window);
